@@ -1,0 +1,47 @@
+.trafic-light {
+    height: 500px;
+    width: 220px;
+    border-radius: 10px;
+}
+
+.poster {
+    height: 100px;
+    width: 50px;
+}
+
+.red,
+.yellow,
+.green,
+.purple {
+    height: 33%;
+    width: 80%;
+    border-radius: 100%;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.active {
+    box-shadow: 10px 10px 52px 17px rgba(255, 255, 255, 0.69);
+    -webkit-box-shadow: 10px 10px 52px 17px rgba(255, 255, 255, 0.69);
+    -moz-box-shadow: 10px 10px 52px 17px rgba(255, 255, 255, 0.69);
+}
+
+.button {
+    background-color: purple;
+    color: #fff;
+    text-transform: uppercase;
+}
