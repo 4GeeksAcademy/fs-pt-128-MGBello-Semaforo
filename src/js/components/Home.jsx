@@ -34,7 +34,7 @@ const Home = () => {
 	return (
 		<>
 			<div className="container d-flex justify-content-center flex-column align-items-center">
-				<div className="trafic-light container bg-dark mt-5 p-3 d-flex  align-items-center flex-column">
+				<div className="trafic-light container bg-dark mt-3 p-3 d-flex  align-items-center flex-column">
 					{
 						color.map(color => (
 							<Light key={color.id} id={color.id} nameClass={color.class} active={active === color.id} onclick={click} />
@@ -44,10 +44,10 @@ const Home = () => {
 				<div className="bg-dark poster"></div>
 			</div>
 			<div className="d-flex justify-content-center mt-3">
-				<button className="btn button" onClick={() => randomColor()}>Aleatorio</button>
+				<button className="btn btn-dark text-uppercase" onClick={() => randomColor()}>Aleatorio</button>
 			</div>
 			<div className="d-flex justify-content-center mt-3">
-				<button className="btn button" onClick={() => updateColors ()}>Añadir Color Morado</button>
+				<button className="btn button" onClick={() => updateColors()}>Añadir Color Morado</button>
 			</div>
 
 		</>
