@@ -2,27 +2,35 @@ import React, { useState } from "react";
 
 import './Home.css'
 import { Light } from "./Light";
+
 //create your first component
 const Home = () => {
 	const [active, setActive] = useState(null)
-
-	const [color, setColor] = useState([
+	const colors = [
 		{ id: 1, class: 'red' },
 		{ id: 2, class: 'yellow' },
 		{ id: 3, class: 'green' }
-	])
-	
+	]
+	const [color, setColor] = useState(colors)
 	const updateColors = () => {
-		const newColor = {
-			id: color.length + 1,
-			class: 'purple'
+		const colorExist = color.some(purple => purple.class === 'purple')
+		if (!colorExist) {
+			const newColor = {
+				id: color.length + 1,
+				class: 'purple'
+			}
+			setColor([...color, newColor])
 		}
-		setColor([...color, newColor])
+
 	}
 	const click = (id) => {
 		setActive(id)
 	}
-
+	const randomColor = () => {
+		const index = Math.floor(Math.random() * color.length)
+		const indexOn = color[index].id
+		click(indexOn)
+	}
 	return (
 		<>
 			<div className="container d-flex justify-content-center flex-column align-items-center">
@@ -36,10 +44,10 @@ const Home = () => {
 				<div className="bg-dark poster"></div>
 			</div>
 			<div className="d-flex justify-content-center mt-3">
-				<button className="btn button" onClick={updateColors}>Aleatorio</button>
+				<button className="btn button" onClick={() => randomColor()}>Aleatorio</button>
 			</div>
 			<div className="d-flex justify-content-center mt-3">
-				<button className="btn button" onClick={updateColors}>Añadir Color Morado</button>
+				<button className="btn button" onClick={() => updateColors ()}>Añadir Color Morado</button>
 			</div>
 
 		</>
