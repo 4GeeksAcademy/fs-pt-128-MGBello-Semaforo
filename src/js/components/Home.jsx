@@ -27,8 +27,12 @@ const Home = () => {
 		setActive(id)
 	}
 	const randomColor = () => {
-		const index = Math.floor(Math.random() * color.length)
-		const indexOn = color[index].id
+		let indexOn;
+		do {
+			const index = Math.floor(Math.random() * color.length)
+			indexOn = color[index].id
+		} while (indexOn === active)
+
 		click(indexOn)
 	}
 	return (
